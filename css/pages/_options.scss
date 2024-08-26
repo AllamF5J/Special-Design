@@ -1,0 +1,118 @@
+/** @format */
+/* ! Start Option */
+.settings-box {
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  max-width: 250px;
+  z-index: 1000;
+  background-color: white;
+  top: 0;
+  left: -200px;
+  transition: var(--trasnition-duration);
+  -webkit-transition: var(--trasnition-duration);
+  -moz-transition: var(--trasnition-duration);
+  -ms-transition: var(--trasnition-duration);
+  -o-transition: var(--trasnition-duration);
+  border: 1px solid #eee;
+
+  &.open {
+    left: 0;
+  }
+
+  .toggle-settings {
+    position: absolute;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: white;
+    z-index: 3;
+    right: -30px;
+    top: 100px;
+    cursor: pointer;
+
+    svg {
+      padding: 8px;
+    }
+  }
+  .settings-container {
+    .option-box {
+      padding: 10px;
+      text-align: center;
+      background-color: #eee;
+      margin: 10px;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+
+      h4 {
+        font-size: 14px;
+      }
+
+      .colors-list {
+        li {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          border: 3px solid #eee;
+          cursor: pointer;
+          margin-top: 10px;
+
+          &.active {
+            border-color: white;
+          }
+        }
+      }
+
+      .random-backgrounds,
+      .bullets-option {
+        span {
+          width: 50px;
+          background-color: var(--main-color);
+          color: #fff;
+          margin-top: 10px;
+          display: inline-block;
+          font-size: 12px;
+          padding: 4px 10px;
+          font-weight: bold;
+          border-radius: 4px;
+          opacity: 0.5;
+          cursor: pointer;
+          text-align: center;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .reset-options {
+      font-weight: bold;
+      font-size: 18px;
+      background-color: #f44336;
+      width: 178px;
+      color: white;
+      border: none;
+      padding: 10px;
+      outline: none;
+      margin: 10px;
+      border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+}
+/* ! End Option */
