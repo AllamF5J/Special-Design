@@ -15,7 +15,7 @@ const skills = document.querySelector(".skills");
 const allSkills = document.querySelectorAll(".skill-box .skill-progress span");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY >= skills.offsetTop - 450) {
+  if (window.scrollY >= skills.offsetTop - 150) {
     allSkills.forEach((skill) => {
       skill.style.width = skill.dataset.progress;
     });
@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
 // ! Making Scroll To Top Button Visible
 const btn = document.getElementById("top");
 window.addEventListener("scroll", () => {
-  window.scrollY >= 2200
+  window.scrollY >= 1000
     ? (btn.style.right = "20px")
     : (btn.style.right = "-1000px");
 });

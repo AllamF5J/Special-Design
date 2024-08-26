@@ -69,7 +69,7 @@
           <ul class="links">
             <li><a href="#about-us" data-section=".about-us" class="active">About</a></li>
             <li><a href="#skills" data-section=".skills">Skills</a></li>
-            <li><a href="#" data-section=".gallery">Gallery</a></li>
+            <li><a href="#gallery" data-section=".gallery">Gallery</a></li>
             <li><a href="#" data-section=".timeline">Timeline</a></li>
             <li><a href="#" data-section=".features">Features</a></li>
             <li><a href="#" data-section=".testimonials">Testimonials</a></li>
@@ -111,44 +111,144 @@
     <div class="container">
       <h2>Our Skills</h2>
       <div class="skill-box">
-        <div class="skill-name">HTML</div>
+        <div class="skill-name one">HTML</div>
         <div class="skill-progress">
           <span data-progress="80%"></span>
         </div>
       </div>
       <div class="skill-box">
-        <div class="skill-name">CSS</div>
+        <div class="skill-name two">CSS</div>
         <div class="skill-progress">
           <span data-progress="70%"></span>
         </div>
       </div>
       <div class="skill-box">
-        <div class="skill-name">JavaScript</div>
+        <div class="skill-name three">JavaScript</div>
         <div class="skill-progress">
-          <span data-progress="90%"></span>
+          <span data-progress="70%"></span>
         </div>
       </div>
       <div class="skill-box">
-        <div class="skill-name">Python</div>
+        <div class="skill-name four">Bootstrap</div>
         <div class="skill-progress">
           <span data-progress="80%"></span>
         </div>
       </div>
       <div class="skill-box">
-        <div class="skill-name">PHP</div>
+        <div class="skill-name five">SASS</div>
         <div class="skill-progress">
-          <span data-progress="90%"></span>
+          <span data-progress="70%"></span>
         </div>
       </div>
       <div class="skill-box">
-        <div class="skill-name">MySQL</div>
+        <div class="skill-name six">TypeScript</div>
         <div class="skill-progress">
-          <span data-progress="70%"></span>
+          <span data-progress="65%"></span>
         </div>
       </div>
     </div>
   </div>
   <!-- ! End Our Skills -->
+  <!-- ! Start Our Gallery -->
+  <div class="gallery" id="gallery">
+    <div class="container">
+      <h2>Our Gallery</h2>
+      <div class="images-box">
+        <img src="images/01.jpg" alt="">
+        <img src="images/02.jpg" alt="">
+        <img src="images/03.jpg" alt="">
+        <img src="images/04.jpg" alt="">
+        <img src="images/05.jpg" alt="">
+        <img src="images/06.png" alt="">
+        <img src="images/07.jpg" alt="">
+        <img src="images/08.jpg" alt="">
+        <img src="images/09.jpg" alt="">
+        <img src="images/10.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- ! End Our Gallery -->
+  <!-- ! Start Testimonials -->
+  <div class="testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="boxes">
+        <div class="ts-box box">
+          <img decoding="async" src="images/avatar-01.png" alt="" />
+          <h3>Mohamed Farag</h3>
+          <span class="title">Full Stack Developer</span>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus
+            quaerat ducimus
+          </p>
+        </div>
+        <div class="ts-box box">
+          <img decoding="async" src="images/avatar-02.png" alt="" />
+          <h3>Sherief Ashraf</h3>
+          <span class="title">Back-end Developer</span>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus
+            quaerat ducimus
+          </p>
+        </div>
+        <div class="ts-box box">
+          <img decoding="async" src="images/avatar-03.png" alt="" />
+          <h3>Amr Hendawy</h3>
+          <span class="title">DevOps Developer</span>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+            <i class="filled fas fa-star"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus
+            quaerat ducimus
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- ! End Testimonials -->
+  <!-- ! Start Contact Us -->
+  <div class="contact">
+    <div class="overlay"></div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="" method="post" id="contactForm">
+        <div class="left" id="leftSection">
+          <input type="text" id="nameInput" name="name" placeholder="Enter Your Name" autocomplete="name" required>
+          <input type="email" id="emailInput" name="email" placeholder="Enter Your Email" autocomplete="email" required>
+          <input type="tel" id="phoneInput" name="phone" placeholder="Enter Your Phone Number" autocomplete="tel"
+            required>
+          <input type="text" id="subjectInput" name="subject" placeholder="Enter The Subject" autocomplete="subject"
+            required>
+        </div>
+        <div class="right" id="rightSection">
+          <textarea id="messageTextarea" name="message" placeholder="Enter Your Message" autocomplete="on"
+            required></textarea>
+          <input type="submit" id="submitButton" value="Send">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ! End Contact Us -->
   <!-- ! Start Footer -->
   <div class="footer">&copy; 2024 <span>Allam</span> All Right Reserved</div>
   <!-- ! End Footer -->

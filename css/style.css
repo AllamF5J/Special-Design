@@ -5,6 +5,7 @@
 :root {
   --main-color: #ff9800;
   --trasnition-duration: 0.3s;
+  --background-dark: #ececec;
 }
 
 * {
@@ -348,12 +349,12 @@ html body .scroller {
   }
 }
 .landing .mouse-show span {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }
 .landing .mouse-show img {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   margin-bottom: -15px;
 }
 
@@ -422,11 +423,24 @@ html body .scroller {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  transition: var(--trasnition-duration);
+  -webkit-transition: var(--trasnition-duration);
+  -moz-transition: var(--trasnition-duration);
+  -ms-transition: var(--trasnition-duration);
+  -o-transition: var(--trasnition-duration);
 }
 @media (max-width: 767px) {
   .skills .skill-box {
     display: block;
   }
+}
+.skills .skill-box:hover {
+  box-shadow: 0 5px 10px rgba(172, 172, 172, 0.4);
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
 }
 .skills .skill-box .skill-name {
   font-weight: bold;
@@ -439,6 +453,24 @@ html body .scroller {
     width: 100%;
     margin-bottom: 15px;
   }
+}
+.skills .skill-box .skill-name.one {
+  color: #e34f26;
+}
+.skills .skill-box .skill-name.two {
+  color: #002561;
+}
+.skills .skill-box .skill-name.three {
+  color: #f7df1e;
+}
+.skills .skill-box .skill-name.four {
+  color: #2b80ff;
+}
+.skills .skill-box .skill-name.five {
+  color: #eb459e;
+}
+.skills .skill-box .skill-name.six {
+  color: #3178c6;
 }
 .skills .skill-box .skill-progress {
   height: 30px;
@@ -459,11 +491,11 @@ html body .scroller {
   width: 0;
   height: 100%;
   background-color: var(--main-color);
-  transition: all calc(var(--trasnition-duration) * 5);
-  -webkit-transition: all calc(var(--trasnition-duration) * 5);
-  -moz-transition: all calc(var(--trasnition-duration) * 5);
-  -ms-transition: all calc(var(--trasnition-duration) * 5);
-  -o-transition: all calc(var(--trasnition-duration) * 5);
+  transition: all calc(var(--trasnition-duration) * 3);
+  -webkit-transition: all calc(var(--trasnition-duration) * 3);
+  -moz-transition: all calc(var(--trasnition-duration) * 3);
+  -ms-transition: all calc(var(--trasnition-duration) * 3);
+  -o-transition: all calc(var(--trasnition-duration) * 3);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -472,6 +504,230 @@ html body .scroller {
 }
 
 /* ! End Our Skills */
+/* ! Start Gallery */
+.gallery {
+  padding: 50px 0;
+}
+.gallery h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.gallery .images-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery .images-box img {
+  width: calc(20% - 10px);
+  padding: 3px;
+  background-color: #f6f6f6;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: crosshair;
+}
+
+/* ! End Gallery */
+/* ! Start Testimonials */
+.testimonials {
+  padding: 70px 0;
+  position: relative;
+}
+.testimonials:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1;
+}
+.testimonials:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  z-index: -1;
+}
+.testimonials h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  margin: 0 0 50px;
+  text-align: left;
+}
+.testimonials .boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.testimonials .boxes .box {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 12px 20px rgba(0, 0, 0, 0.07);
+  position: relative;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: transform var(--trasnition-duration), box-shadow var(--trasnition-duration);
+  -webkit-transition: transform var(--trasnition-duration), box-shadow var(--trasnition-duration);
+  -moz-transition: transform var(--trasnition-duration), box-shadow var(--trasnition-duration);
+  -ms-transition: transform var(--trasnition-duration), box-shadow var(--trasnition-duration);
+  -o-transition: transform var(--trasnition-duration), box-shadow var(--trasnition-duration);
+}
+.testimonials .boxes .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+.testimonials .boxes .box img {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 10px solid var(--background-dark);
+}
+.testimonials .boxes .box h3 {
+  color: var(--main-color);
+  padding-bottom: 5px;
+}
+.testimonials .boxes .box span {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+}
+.testimonials .boxes .box .rate {
+  padding-top: 10px;
+}
+.testimonials .boxes .box .rate .filled {
+  color: #ffc107;
+}
+.testimonials .boxes .box p {
+  padding-top: 10px;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* ! End Testimonials */
+/* ! Start Contact Us */
+.contact {
+  position: relative;
+  background-image: url("../images/contact.png");
+  background-size: cover;
+  padding: 60px 0;
+  min-height: 80vh;
+}
+.contact .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.contact .container {
+  position: relative;
+  z-index: 3;
+}
+.contact .container h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.contact .container form {
+  overflow: hidden;
+}
+.contact .container form .left {
+  float: left;
+  width: 52%;
+}
+.contact .container form .right {
+  float: right;
+  width: 48%;
+}
+.contact .container form input:not([type=submit]),
+.contact .container form textarea {
+  display: block;
+  width: 90%;
+  padding: 16px;
+  margin-bottom: 25px;
+  border: 1px solid var(--main-color);
+  border-color: transparent transparent var(--main-color) var(--main-color);
+  outline: none;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.contact .container form input:not([type=submit])::-moz-placeholder, .contact .container form textarea::-moz-placeholder {
+  transition: calc(var(--trasnition-duration) * 2);
+  -webkit-transition: calc(var(--trasnition-duration) * 2);
+  -moz-transition: calc(var(--trasnition-duration) * 2);
+  -ms-transition: calc(var(--trasnition-duration) * 2);
+  -o-transition: calc(var(--trasnition-duration) * 2);
+}
+.contact .container form input:not([type=submit])::placeholder,
+.contact .container form textarea::placeholder {
+  transition: calc(var(--trasnition-duration) * 2);
+  -webkit-transition: calc(var(--trasnition-duration) * 2);
+  -moz-transition: calc(var(--trasnition-duration) * 2);
+  -ms-transition: calc(var(--trasnition-duration) * 2);
+  -o-transition: calc(var(--trasnition-duration) * 2);
+}
+.contact .container form input:not([type=submit]):focus,
+.contact .container form textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 var(--main-color);
+}
+.contact .container form input:not([type=submit]):focus::-moz-placeholder, .contact .container form textarea:focus::-moz-placeholder {
+  opacity: 0;
+}
+.contact .container form input:not([type=submit]):focus::placeholder,
+.contact .container form textarea:focus::placeholder {
+  opacity: 0;
+}
+.contact .container form input:not([type=submit]) {
+  box-shadow: 1px 1px 1px var(--main-color);
+}
+.contact .container form textarea {
+  width: 80%;
+  height: 215px;
+  resize: none;
+  border: 1px solid;
+  border-color: transparent transparent var(--main-color) var(--main-color);
+  box-shadow: 0px 1px 0px var(--main-color);
+}
+.contact .container form [type=submit] {
+  width: 50%;
+  padding: 10px;
+  display: block;
+  margin-left: 15%;
+  border: none;
+  background-color: var(--main-color) !important;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ! End Contact Us */
 /* ! Start Footer */
 .footer {
   background-color: #333;
@@ -480,19 +736,15 @@ html body .scroller {
   text-align: center;
   font-size: 18px;
 }
-
 .footer span {
   font-weight: bold;
   color: var(--main-color);
 }
-
 .footer span::after {
   content: "❤️";
   display: none;
 }
-
-.footer span:hover,
-.footer span:hover::after {
+.footer span:hover, .footer span:hover::after {
   color: red;
   display: unset;
 }
