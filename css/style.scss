@@ -40,6 +40,10 @@
     display: flex;
     padding: 10px;
 
+    @media (max-width: 767px) {
+      display: none;
+    }
+
     .container {
       display: flex;
       justify-content: space-between;
@@ -88,13 +92,15 @@
     z-index: 2;
     color: #fff;
     text-align: center;
-    width: 50%;
+    width: 90%;
+
     h1 {
       font-size: 34px;
       margin: 0 0 20px;
 
       @media (max-width: 575px) {
         font-size: 26px;
+        margin-bottom: 10px;
       }
       span {
         color: var(--main-color);
@@ -104,6 +110,10 @@
       line-height: 1.6;
       font-size: 20px;
       margin: 0;
+
+      @media (max-width: 575px) {
+        font-size: 16px;
+      }
     }
   }
   .mouse-show {
@@ -119,26 +129,52 @@
     text-align: center;
     z-index: 3;
 
-    @media (max-width: 767px) {
-      & {
-        display: none;
-      }
-    }
-
     span {
       font-size: 15px;
       font-weight: 500;
+
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
     }
 
-    img {
+    .mouse {
       width: 40px;
       height: 40px;
-      margin-bottom: -15px;
+      margin-bottom: -10px;
       position: relative;
       animation: moving-mouse calc(var(--trasnition-duration) * 2) linear
         infinite;
       -webkit-animation: moving-mouse calc(var(--trasnition-duration) * 2)
         linear infinite;
+      color: var(--main-color);
+      opacity: 0.5;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .phone {
+      width: 40px;
+      height: 40px;
+      margin-bottom: -10px;
+      position: relative;
+      animation: moving-mouse calc(var(--trasnition-duration) * 2) linear
+        infinite;
+      -webkit-animation: moving-mouse calc(var(--trasnition-duration) * 2)
+        linear infinite;
+      color: var(--main-color);
+      opacity: 0.5;
+
+      @media (min-width: 767px) {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
@@ -161,6 +197,10 @@
         @extend .h2;
         text-align: left;
         margin-bottom: 20px;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
       }
 
       p {
@@ -169,12 +209,21 @@
         color: $font-color;
         width: 550px;
         max-width: 100%;
+
+        @media (max-width: 767px) {
+          text-align: center;
+          width: 350px;
+        }
       }
     }
 
     .images-box {
       flex: 1;
       text-align: center;
+
+      @media (max-width: 767px) {
+        margin-top: 40px;
+      }
 
       img {
         width: 250px;
@@ -183,10 +232,6 @@
           infinite;
         -webkit-animation: up-and-down calc(var(--trasnition-duration) * 8)
           linear infinite;
-
-        @media (max-width: 767px) {
-          display: none;
-        }
       }
     }
   }
@@ -197,6 +242,10 @@
   background-color: #eee;
   display: flex;
   padding: 50px 0;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
 
   h2 {
     @extend .h2;
@@ -305,16 +354,26 @@
 /* ! Start Gallery */
 .gallery {
   padding: 50px 0;
+
   h2 {
     @extend .h2;
     text-align: center;
     margin-bottom: 50px;
   }
-  .images-box {
-    display: flex;
-    flex-wrap: wrap;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 20px;
+    }
+
     img {
-      width: calc(20% - 10px);
+      width: 100%;
       padding: 3px;
       background-color: #f6f6f6;
       margin: 5px;
@@ -393,6 +452,11 @@
       position: relative;
       float: left;
 
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-top: 30px;
+      }
+
       &::before {
         content: "";
         width: 14px;
@@ -403,10 +467,25 @@
         border-radius: 50%;
         top: 20px;
         right: -35px;
+
+        @media (max-width: 767px) {
+          top: -32px;
+          right: 44.8%;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+        }
       }
 
       .content::before {
+        width: 0px;
         @include arrow("right");
+
+        @media (max-width: 767px) {
+          @include arrow("top");
+        }
       }
     }
 
@@ -415,6 +494,11 @@
       margin-bottom: 40px;
       position: relative;
       float: right;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-top: 30px;
+      }
 
       &::before {
         content: "";
@@ -426,10 +510,24 @@
         border-radius: 50%;
         top: 20px;
         left: -35px;
+
+        @media (max-width: 767px) {
+          top: -32px;
+          left: 50%;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+        }
       }
 
       .content::before {
         @include arrow("left");
+
+        @media (max-width: 767px) {
+          @include arrow("top");
+        }
       }
     }
   }
@@ -618,14 +716,25 @@
 
     form {
       overflow: hidden;
+
       .left {
         float: left;
         width: 52%;
+
+        @media (max-width: 767px) {
+          display: block;
+          width: 100%;
+        }
       }
 
       .right {
         float: right;
         width: 48%;
+
+        @media (max-width: 767px) {
+          display: block;
+          width: 100%;
+        }
       }
 
       input:not([type="submit"]),
@@ -643,6 +752,10 @@
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
         -o-border-radius: 15px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
 
         &::placeholder {
           transition: calc(var(--trasnition-duration) * 2);
@@ -674,6 +787,10 @@
         border-color: transparent transparent var(--main-color)
           var(--main-color);
         box-shadow: 0px 1px 0px var(--main-color);
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
 
       [type="submit"] {
@@ -689,6 +806,10 @@
         position: relative;
         overflow: hidden;
         z-index: 1;
+
+        @media (max-width: 767px) {
+          margin: auto;
+        }
 
         &:hover {
           opacity: 0.8;

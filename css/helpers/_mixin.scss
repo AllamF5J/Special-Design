@@ -5,12 +5,12 @@
   position: absolute;
   border: 12px solid transparent;
   @if $direction == "top" or $direction == "bottom" {
-    left: 20%;
-    transform: translateX(-20%);
-    -webkit-transform: translateX(-20%);
-    -moz-transform: translateX(-20%);
-    -ms-transform: translateX(-20%);
-    -o-transform: translateX(-20%);
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
     #{$direction}: -24px;
     @if $direction == "top" {
       border-bottom-color: white;
@@ -30,5 +30,25 @@
     } @else {
       border-right-color: white;
     }
+  }
+}
+
+@mixin bullet($direction, $color) {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+
+  #{$direction}: -20px;
+  @if $direction == "right" {
+    border-left-color: $color;
+  } @else {
+    border-right-color: $color;
   }
 }
