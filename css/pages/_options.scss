@@ -158,7 +158,8 @@
       display: none;
 
       &:before {
-        @include bullet("right", var(--main-color));
+        @include shape("bullet", "right", var(--main-color));
+        right: -20px;
       }
     }
 

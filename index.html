@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Special Design</title>
   <!-- ! Page Title Icon -->
-  <link rel="icon" href="images/icons-solid.svg" type="image/svg+xml" />
+  <link rel="icon" href="images/Icon_03.png">
   <!-- ! Main Template SASS File -->
   <link rel="stylesheet" href="css/style.css">
   <!-- ! Render All Elements Normally -->
@@ -75,6 +75,9 @@
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact-us">Contact Us</a></li>
           </ul>
+          <div class="toggle-menu hide-before">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -364,17 +367,19 @@
       <h2>Contact Us</h2>
       <form action="" method="post" id="contactForm">
         <div class="left" id="leftSection">
-          <input type="text" id="nameInput" name="name" placeholder="Enter Your Name" autocomplete="name" required>
-          <input type="email" id="emailInput" name="email" placeholder="Enter Your Email" autocomplete="email" required>
+          <input type="text" id="nameInput" name="name" placeholder="Enter Your Name" autocomplete="name" required
+            class="input">
+          <input type="email" id="emailInput" name="email" placeholder="Enter Your Email" autocomplete="email" required
+            class="input">
           <input type="tel" id="phoneInput" name="phone" placeholder="Enter Your Phone Number" autocomplete="tel"
             required>
           <input type="text" id="subjectInput" name="subject" placeholder="Enter The Subject" autocomplete="subject"
-            required>
+            required class="input">
         </div>
-        <div class="right" id="rightSection">
-          <textarea id="messageTextarea" name="message" placeholder="Enter Your Message" autocomplete="on"
-            required></textarea>
-          <input type="submit" id="submitButton" value="Send">
+        <div class="right" id="rightSection" class="input">
+          <textarea id="messageTextarea" name="message" placeholder="Enter Your Message" autocomplete="on" required
+            class="input"></textarea>
+          <input type="submit" id="submitButton" value="Send" class="input">
         </div>
       </form>
     </div>

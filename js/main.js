@@ -1,5 +1,9 @@
 /** @format */
 
+// ! Global Variable
+let flag = true;
+let clear;
+
 // ! Check If There's a Color In My Local Storage
 let localColor = localStorage.getItem("color_option");
 if (localColor !== null) {
@@ -8,9 +12,53 @@ if (localColor !== null) {
   // ! Check For Active Class
   document.querySelectorAll(".colors-list li").forEach((el) => {
     el.classList.remove("active");
-
     if (el.dataset.color === localColor) {
       el.classList.add("active");
+    }
+  });
+}
+
+// ! Check If There's a Background In My Local Storage
+let localbg = localStorage.getItem("bg-option");
+let localbgImg = localStorage.getItem("background");
+let landingPage = document.querySelector(".landing");
+if (localbg !== null) {
+  if (localbg === "true") {
+    flag = true;
+  } else {
+    flag = false;
+  }
+
+  // ! Check For Active Class
+  document.querySelectorAll(".random-backgrounds span").forEach((sp) => {
+    sp.classList.remove("active");
+    if (localbg === "true") {
+      document
+        .querySelector(".random-backgrounds .yes")
+        .classList.add("active");
+    } else {
+      document.querySelector(".random-backgrounds .no").classList.add("active");
+      landingPage.style.cssText = `background-image: url("../images/${localbgImg}")`;
+    }
+  });
+}
+
+// ! Check If There's a Bullet Option In My Local Storage
+let localbullet = localStorage.getItem("bullet-option");
+if (localbullet !== null) {
+  if (localbullet === "show") {
+    document.querySelector(".bullets-nav").style.cssText = `display: block`;
+  } else {
+    document.querySelector(".bullets-nav").style.cssText = `display: none`;
+  }
+
+  // ! Check For Active Class
+  document.querySelectorAll(".bullets-option span").forEach((sp) => {
+    sp.classList.remove("active");
+    if (localbullet === "show") {
+      document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+      document.querySelector(".bullets-option .no").classList.add("active");
     }
   });
 }
@@ -23,6 +71,16 @@ randombg.forEach((span) => {
       el.classList.remove("active");
     });
     e.target.classList.add("active");
+
+    if (e.target.dataset.background === "yes") {
+      flag = true;
+      randomizeImg();
+      localStorage.setItem("bg-option", true);
+    } else {
+      flag = false;
+      clearInterval(clear);
+      localStorage.setItem("bg-option", false);
+    }
   });
 });
 
@@ -34,6 +92,12 @@ bullets.forEach((span) => {
       el.classList.remove("active");
     });
     e.target.classList.add("active");
+    localStorage.setItem("bullet-option", e.target.dataset.display);
+    if (e.target.dataset.display === "show") {
+      document.querySelector(".bullets-nav").style.cssText = `display: block`;
+    } else {
+      document.querySelector(".bullets-nav").style.cssText = `display: none`;
+    }
   });
 });
 
@@ -128,13 +192,18 @@ img.forEach((ele) => {
 });
 
 // ! Change A Random Background To Landing Section
-let landingPage = document.querySelector(".landing");
-let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+function randomizeImg() {
+  if (flag) {
+    let imgsArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
-setInterval(() => {
-  let randomNum = Math.floor(Math.random() * imgsArray.length);
-  landingPage.style.cssText = `background-image: url("../images/${imgsArray[randomNum]}")`;
-}, 10000);
+    clear = setInterval(() => {
+      let randomNum = Math.floor(Math.random() * imgsArray.length);
+      landingPage.style.cssText = `background-image: url("../images/${imgsArray[randomNum]}")`;
+      localStorage.setItem("background", imgsArray[randomNum]);
+    }, 10000);
+  }
+}
+randomizeImg();
 
 // ! Make A Function To A Setting Box
 document.querySelector(".settings-box .toggle-settings").onclick = (ele) => {
@@ -143,3 +212,59 @@ document.querySelector(".settings-box .toggle-settings").onclick = (ele) => {
   let settings = document.querySelector(".settings-box");
   settings.classList.toggle("open");
 };
+
+// ! Make a Reset Option Buttons
+document.querySelector(".reset-options").onclick = () => {
+  localStorage.clear();
+  location.reload();
+};
+
+// ! Make A Toggle Menu
+let toggleButton = document.querySelector(".toggle-menu");
+toggleButton.onclick = (ele) => {
+  let menu = document.querySelector(".links");
+  menu.classList.toggle("open");
+
+  // ! Check if the menu is open and toggle the class accordingly
+  if (!menu.classList.contains("open")) {
+    toggleButton.classList.add("hide-before");
+  } else {
+    toggleButton.classList.remove("hide-before");
+  }
+};
+
+// ! Make a Button Change Position In Form When The User Enter All Data..
+document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.getElementById("submitButton");
+  const form = document.getElementById("contactForm");
+
+  function moveSubmitButton() {
+    const formRect = form.getBoundingClientRect();
+    const maxX = formRect.width - submitButton.offsetWidth;
+    const maxY = formRect.height - submitButton.offsetHeight;
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    // submitButton.style.position = "absolute";
+    submitButton.style.cssText = `position: absolute; width: fit-content`;
+    submitButton.style.left = `${randomX}px`;
+    submitButton.style.top = `${randomY}px`;
+  }
+
+  submitButton.addEventListener("mouseover", (event) => {
+    event.preventDefault();
+
+    const allInputs = form.querySelectorAll(".input");
+    let allValid = true;
+
+    allInputs.forEach((input) => {
+      if (!input.checkValidity()) {
+        allValid = false;
+      }
+    });
+
+    if (allValid) {
+      moveSubmitButton();
+    }
+  });
+});
