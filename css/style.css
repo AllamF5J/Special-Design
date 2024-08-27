@@ -80,7 +80,8 @@ html body .scroller {
   position: fixed;
   left: 0;
   top: 0;
-  height: 3px;
+  height: 4px;
+  opacity: 0.7;
   width: 0;
   background-color: var(--main-color);
   z-index: 9999;
@@ -111,32 +112,15 @@ html body .scroller {
 
 /* ! Custom Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff9800, #009688, #e91e63, #03a9f4);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ffb74d, #26a69a, #f06292, #4fc3f7);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(45deg, #fb8c00, #00796b, #d81b60, #0288d1);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+.h2, .about-us .container .info-box h2, .skills h2, .gallery h2, .features h2, .testimonials h2, .contact .container h2 {
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* ! End Global Rules */
@@ -171,7 +155,7 @@ html body .scroller {
   background-color: white;
   z-index: 3;
   right: -30px;
-  top: 100px;
+  top: 180px;
   cursor: pointer;
 }
 .settings-box .toggle-settings svg {
@@ -247,10 +231,31 @@ html body .scroller {
 /* ! End Option */
 /** @format */
 /** @format */
+/** @format */
+/** @format */
+/* ! Start Animation */
+@keyframes up-and-down {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: -40px;
+  }
+}
+@keyframes moving-mouse {
+  100% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+  }
+}
+/* ! End Animation */
 /* ! Start Landing */
 .landing {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   background-image: url("../images/02.jpg");
   background-size: cover;
 }
@@ -356,6 +361,9 @@ html body .scroller {
   width: 40px;
   height: 40px;
   margin-bottom: -15px;
+  position: relative;
+  animation: moving-mouse calc(var(--trasnition-duration) * 2) linear infinite;
+  -webkit-animation: moving-mouse calc(var(--trasnition-duration) * 2) linear infinite;
 }
 
 /* ! End Landing */
@@ -374,10 +382,8 @@ html body .scroller {
   flex: 1;
 }
 .about-us .container .info-box h2 {
-  color: var(--main-color);
-  font-size: 30px;
+  text-align: left;
   margin-bottom: 20px;
-  font-weight: bold;
 }
 .about-us .container .info-box p {
   margin: 0;
@@ -392,6 +398,9 @@ html body .scroller {
 }
 .about-us .container .images-box img {
   width: 250px;
+  position: relative;
+  animation: up-and-down calc(var(--trasnition-duration) * 8) linear infinite;
+  -webkit-animation: up-and-down calc(var(--trasnition-duration) * 8) linear infinite;
 }
 @media (max-width: 767px) {
   .about-us .container .images-box img {
@@ -407,11 +416,8 @@ html body .scroller {
   padding: 50px 0;
 }
 .skills h2 {
-  font-weight: bold;
-  font-size: 30px;
-  color: var(--main-color);
-  margin: 0 0 50px;
   text-align: center;
+  margin-bottom: 50px;
 }
 .skills .skill-box {
   background-color: #fff;
@@ -491,11 +497,11 @@ html body .scroller {
   width: 0;
   height: 100%;
   background-color: var(--main-color);
-  transition: all calc(var(--trasnition-duration) * 3);
-  -webkit-transition: all calc(var(--trasnition-duration) * 3);
-  -moz-transition: all calc(var(--trasnition-duration) * 3);
-  -ms-transition: all calc(var(--trasnition-duration) * 3);
-  -o-transition: all calc(var(--trasnition-duration) * 3);
+  transition: all calc(var(--trasnition-duration) * 9);
+  -webkit-transition: all calc(var(--trasnition-duration) * 9);
+  -moz-transition: all calc(var(--trasnition-duration) * 9);
+  -ms-transition: all calc(var(--trasnition-duration) * 9);
+  -o-transition: all calc(var(--trasnition-duration) * 9);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -509,11 +515,8 @@ html body .scroller {
   padding: 50px 0;
 }
 .gallery h2 {
-  font-weight: bold;
-  font-size: 30px;
-  color: var(--main-color);
-  margin: 0 0 50px;
   text-align: center;
+  margin-bottom: 50px;
 }
 .gallery .images-box {
   display: flex;
@@ -529,6 +532,169 @@ html body .scroller {
 }
 
 /* ! End Gallery */
+/* ! Start Timeline  */
+.timeline {
+  background-color: var(--background-dark);
+  padding: 60px 0;
+}
+.timeline .contents {
+  position: relative;
+  overflow: hidden;
+}
+.timeline .contents::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--main-color);
+  left: 50%;
+  margin-left: -1px;
+  top: 0;
+}
+.timeline .contents .year {
+  margin: 20px auto;
+  width: 50px;
+  background-color: var(--main-color);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 2px 6px;
+  font-weight: bold;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.timeline .contents .clearfix {
+  clear: both;
+}
+.timeline .contents .content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.timeline .contents .content h3 {
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.timeline .contents .content p {
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+.timeline .contents .left {
+  width: calc(50% - 25px);
+  margin-bottom: 40px;
+  position: relative;
+  float: left;
+}
+.timeline .contents .left::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 3px solid var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 20px;
+  right: -35px;
+}
+.timeline .contents .left .content::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  top: 13%;
+  transform: translateY(-13%);
+  -webkit-transform: translateY(-13%);
+  -moz-transform: translateY(-13%);
+  -ms-transform: translateY(-13%);
+  -o-transform: translateY(-13%);
+  right: -24px;
+  border-left-color: white;
+}
+.timeline .contents .right {
+  width: calc(50% - 25px);
+  margin-bottom: 40px;
+  position: relative;
+  float: right;
+}
+.timeline .contents .right::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 3px solid var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 20px;
+  left: -35px;
+}
+.timeline .contents .right .content::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  top: 13%;
+  transform: translateY(-13%);
+  -webkit-transform: translateY(-13%);
+  -moz-transform: translateY(-13%);
+  -ms-transform: translateY(-13%);
+  -o-transform: translateY(-13%);
+  left: -24px;
+  border-right-color: white;
+}
+
+/* ! End Timeline  */
+/* ! Start Our Features */
+.features {
+  padding: 60px 0 100px;
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 70px;
+}
+.features .container .box {
+  text-align: center;
+  padding: 0 18px;
+}
+.features .container .box img {
+  width: 90px;
+  height: 90px;
+}
+.features .container .box h4 {
+  font-weight: bold;
+  font-size: 23px;
+  margin: 12px 0;
+  position: relative;
+}
+.features .container .box h4::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 40px;
+  background-color: var(--main-color);
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.features .container .box p {
+  margin-top: 30px;
+  line-height: 1.8;
+  color: #767676;
+}
+
+/* ! End Our Features */
 /* ! Start Testimonials */
 .testimonials {
   padding: 70px 0;
@@ -555,11 +721,8 @@ html body .scroller {
   z-index: -1;
 }
 .testimonials h2 {
-  font-weight: bold;
-  font-size: 30px;
-  color: white;
-  margin: 0 0 50px;
   text-align: left;
+  color: white;
 }
 .testimonials .boxes {
   display: grid;
@@ -626,8 +789,7 @@ html body .scroller {
   position: relative;
   background-image: url("../images/contact.png");
   background-size: cover;
-  padding: 60px 0;
-  min-height: 80vh;
+  padding: 120px 0;
 }
 .contact .overlay {
   position: absolute;
@@ -640,13 +802,6 @@ html body .scroller {
 .contact .container {
   position: relative;
   z-index: 3;
-}
-.contact .container h2 {
-  font-weight: bold;
-  font-size: 30px;
-  color: var(--main-color);
-  margin: 0 0 50px;
-  text-align: center;
 }
 .contact .container form {
   overflow: hidden;
@@ -725,6 +880,9 @@ html body .scroller {
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+.contact .container form [type=submit]:hover {
+  opacity: 0.8;
 }
 
 /* ! End Contact Us */

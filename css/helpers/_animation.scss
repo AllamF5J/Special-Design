@@ -1,0 +1,23 @@
+/** @format */
+/* ! Start Animation */
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50% {
+    top: -40px;
+  }
+}
+
+@keyframes moving-mouse {
+  100% {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+  }
+}
+/* ! End Animation */

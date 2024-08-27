@@ -82,7 +82,8 @@ html {
       position: fixed;
       left: 0;
       top: 0;
-      height: 3px;
+      height: 4px;
+      opacity: 0.7;
       width: 0;
       background-color: var(--main-color);
       z-index: 9999;
@@ -112,32 +113,14 @@ html {
 
 /* ! Custom Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+.h2 {
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
 }
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff9800, #009688, #e91e63, #03a9f4);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ffb74d, #26a69a, #f06292, #4fc3f7);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(45deg, #fb8c00, #00796b, #d81b60, #0288d1);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
 /* ! End Global Rules */
