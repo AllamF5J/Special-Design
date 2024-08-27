@@ -198,10 +198,9 @@ function randomizeImg() {
 
     clear = setInterval(() => {
       let randomNum = Math.floor(Math.random() * imgsArray.length);
-      landingPage.style.backgroundImage =
-        'url("../images/' + imgsArray[randomNum] + '")';
+      landingPage.style.cssText = `background-image: url("https://allamf5j.github.io/Special-Design/images/${imgsArray[randomNum]}")`;
       localStorage.setItem("background", imgsArray[randomNum]);
-    }, 10000);
+    }, 8000);
   }
 }
 randomizeImg();
