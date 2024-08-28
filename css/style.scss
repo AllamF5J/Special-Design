@@ -49,10 +49,11 @@
       .logo {
         width: 300px;
         padding: 15px;
-        font-weight: bold;
         font-size: 20px;
         display: flex;
         align-items: center;
+        letter-spacing: -1px;
+        font-family: "Matemasie", sans-serif;
       }
 
       .links-container {
@@ -70,7 +71,7 @@
               background-color: #fff;
               display: block;
               position: absolute;
-              left: -380%;
+              left: -450%;
               top: 40px;
               width: fit-content;
               border-radius: 4px;
@@ -85,7 +86,7 @@
                 display: block;
                 margin: 10px;
                 width: 100%;
-                padding: 10px 70px;
+                padding: 10px 60px;
 
                 &:not(:last-of-type) {
                   border-bottom: 1px solid #eee;
@@ -107,6 +108,7 @@
               color: #fff;
               text-decoration: none;
               transition: 0.3s;
+              font-weight: 500;
 
               &:hover,
               &.active {
@@ -120,8 +122,9 @@
           &::before {
             @include shape("triangle", "top", white, 50%);
             top: 17px;
+            z-index: 5;
 
-            @media (min-width: 991px) {
+            @media (min-width: 992px) {
               display: none;
             }
           }
@@ -210,7 +213,7 @@
       color: var(--main-color);
       opacity: 0.5;
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         display: none;
       }
     }
@@ -227,11 +230,11 @@
       color: var(--main-color);
       opacity: 0.5;
 
-      @media (min-width: 767px) {
+      @media (min-width: 992px) {
         display: none;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         width: 30px;
         height: 30px;
       }

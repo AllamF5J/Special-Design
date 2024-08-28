@@ -38,7 +38,7 @@ if (localbg !== null) {
         .classList.add("active");
     } else {
       document.querySelector(".random-backgrounds .no").classList.add("active");
-      landingPage.style.cssText = `background-image: url("../images/${localbgImg}")`;
+      landingPage.style.backgroundImage = 'url("images/' + localbgImg + '")';
     }
   });
 }
@@ -170,7 +170,7 @@ img.forEach((ele) => {
     popUpImg.src = ele.src;
 
     let myButton = document.createElement("button");
-    myButton.innerHTML = "x";
+    myButton.innerHTML = "X";
 
     myButton.addEventListener("click", function () {
       div.remove();

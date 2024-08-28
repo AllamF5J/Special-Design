@@ -176,14 +176,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 2000;
 }
 
 .popUp {
   position: fixed;
-  padding: 40px 20px;
-  width: 500px;
+  padding: 20px 20px 40px;
+  width: 850px;
   border: 1px solid #eee;
   z-index: 2001;
   left: 50%;
@@ -217,17 +217,19 @@
     position: absolute;
     top: -13px;
     right: -13px;
-    width: 26px;
-    padding: 6px 4px;
+    width: 40px;
+    height: 40px;
+    padding: 6px 4px 5px;
     color: white;
     background-color: var(--main-color);
     border-color: white;
     outline: none;
+    font-weight: bold;
   }
 
   h3 {
     text-align: center;
-    margin: -8px 0 20px;
+    margin: 1px 0 20px;
     color: var(--main-color);
   }
 }

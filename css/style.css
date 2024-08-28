@@ -290,14 +290,14 @@ html body .scroller {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 2000;
 }
 
 .popUp {
   position: fixed;
-  padding: 40px 20px;
-  width: 500px;
+  padding: 20px 20px 40px;
+  width: 850px;
   border: 1px solid #eee;
   z-index: 2001;
   left: 50%;
@@ -331,16 +331,18 @@ html body .scroller {
   position: absolute;
   top: -13px;
   right: -13px;
-  width: 26px;
-  padding: 6px 4px;
+  width: 40px;
+  height: 40px;
+  padding: 6px 4px 5px;
   color: white;
   background-color: var(--main-color);
   border-color: white;
   outline: none;
+  font-weight: bold;
 }
 .popUp h3 {
   text-align: center;
-  margin: -8px 0 20px;
+  margin: 1px 0 20px;
   color: var(--main-color);
 }
 
@@ -400,10 +402,11 @@ html body .scroller {
 .landing .header .container .logo {
   width: 300px;
   padding: 15px;
-  font-weight: bold;
   font-size: 20px;
   display: flex;
   align-items: center;
+  letter-spacing: -1px;
+  font-family: "Matemasie", sans-serif;
 }
 .landing .header .container .links-container {
   text-align: right;
@@ -421,7 +424,7 @@ html body .scroller {
     background-color: #fff;
     display: block;
     position: absolute;
-    left: -380%;
+    left: -450%;
     top: 40px;
     width: -moz-fit-content;
     width: fit-content;
@@ -437,7 +440,7 @@ html body .scroller {
     display: block;
     margin: 10px;
     width: 100%;
-    padding: 10px 70px;
+    padding: 10px 60px;
   }
   .landing .header .container .links-container .links.open li:not(:last-of-type) {
     border-bottom: 1px solid #eee;
@@ -455,6 +458,7 @@ html body .scroller {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: 500;
 }
 .landing .header .container .links-container .links li a:hover, .landing .header .container .links-container .links li a.active {
   color: var(--main-color);
@@ -468,8 +472,9 @@ html body .scroller {
   top: -24px;
   border-bottom-color: white;
   top: 17px;
+  z-index: 5;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .landing .header .container .links-container .toggle-menu::before {
     display: none;
   }
@@ -553,7 +558,7 @@ html body .scroller {
   color: var(--main-color);
   opacity: 0.5;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .landing .mouse-show .mouse {
     display: none;
   }
@@ -568,12 +573,12 @@ html body .scroller {
   color: var(--main-color);
   opacity: 0.5;
 }
-@media (min-width: 767px) {
+@media (min-width: 992px) {
   .landing .mouse-show .phone {
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .landing .mouse-show .phone {
     width: 30px;
     height: 30px;
